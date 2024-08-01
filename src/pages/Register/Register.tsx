@@ -74,8 +74,8 @@ const Register = () => {
           </div>
           {/* Password Input */}
           <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium text-gray-700">
-              Password* {/* Added asterisk */}
+            <label className="block my-2 text-sm font-medium text-gray-700">
+              Password * {/* Added asterisk */}
             </label>
             <div className="relative">
               <input

@@ -120,7 +120,7 @@ const AllProducts = () => {
           </a> */}
           </div>
 
-          <div className="flex items-center justify-between gap-5">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
             <div className="w-full max-w-sm -mt-28">
               <FilterSection />
             </div>

@@ -2,6 +2,7 @@ import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa6";
 import logo from "../../assets/logo.png";
 import delevary from "../../assets/bg/delevary1.png";
 import delevary1 from "../../assets/bg/delevary2.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-white py-20 border-t">
@@ -43,10 +44,10 @@ const Footer = () => {
               <h3 className="font-bold text-md mb-2 ">CUSTOMER LINK</h3>
               <ul className="text-gray-600 text-base space-y-1">
                 <li>
-                  <a href="#">Register</a>
+                  <Link to="/signUp">Register</Link>
                 </li>
                 <li>
-                  <a href="#">Login</a>
+                  <Link to="/login">Login</Link>
                 </li>
                 <li>
                   <a href="#">Forgot Password?</a>

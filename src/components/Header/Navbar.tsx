@@ -293,6 +293,12 @@ const Navbar = () => {
           >
             About US
           </Link>
+          <Link
+            to="/blogs"
+            className="text-black hover:text-blue-600 hover:bg-gray-100 py-2 px-4 rounded-lg font-semibold"
+          >
+            Blogs
+          </Link>
           {/* <a
             href="#"
             className="text-black hover:text-blue-600 hover:bg-gray-100 py-2 px-4 rounded-lg font-semibold"
