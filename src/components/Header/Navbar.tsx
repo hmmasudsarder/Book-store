@@ -12,24 +12,13 @@ import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("OFFER10");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    toast('Wow so easy !')
+    
     ToastSuccess({ children: "Coupon code copied!" });
-    toast.success("", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+    
   };
 
   return (
@@ -48,7 +37,7 @@ const Navbar = () => {
             >
               <FaCopy />
             </button>
-            {copied && <span className="text-green-500 text-sm">Copied!</span>}
+            {/* {copied && <span className="text-green-500 text-sm">Copied!</span>} */}
           </div>
         </div>
       </div>
