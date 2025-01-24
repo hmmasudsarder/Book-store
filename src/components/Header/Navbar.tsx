@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-blue-500 text-white">
+    <header className="bg-blue-500 text-white fixed top-0 left-0 right-0 z-50">
       {/* Top Bar */}
       <div className="bg-gray-200 text-gray-800 px-4 py-2">
         <div className="mx-auto flex justify-center items-center lg:space-x-2">

@@ -28,7 +28,7 @@ const slides = [
   },
   {
     id: 2,
-    image: bg2,
+    image: bg3,
     alt: "Bakery Products",
   },
 ];
