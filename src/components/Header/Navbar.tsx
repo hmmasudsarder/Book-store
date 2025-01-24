@@ -8,15 +8,12 @@ import {
 } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import ToastSuccess from "../ui/ToastSuccess";
-import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("OFFER10");
-    toast('Wow so easy !')
-    
     ToastSuccess({ children: "Coupon code copied!" });
     
   };
