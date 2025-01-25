@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import ToastSuccess from "../ui/ToastSuccess";
+import { Bounce, toast } from "react-toastify";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,6 +19,17 @@ const Navbar = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
     ToastSuccess({ children: "Coupon code copied!" });
+    toast.success("", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
   };
 
   return (
