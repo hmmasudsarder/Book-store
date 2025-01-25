@@ -4,10 +4,11 @@ import {
   FaShoppingCart,
   FaUser,
   FaTruck,
-  FaCopy,
 } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
+import { IoMdCopy } from "react-icons/io";
 import ToastSuccess from "../ui/ToastSuccess";
+import logo from "../../assets/logo.png"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ const Navbar = () => {
               onClick={handleCopy}
               className="text-gray-600 flex items-center space-x-1"
             >
-              <FaCopy />
+              <IoMdCopy />
             </button>
             {/* {copied && <span className="text-green-500 text-sm">Copied!</span>} */}
           </div>
@@ -40,22 +41,22 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="flex justify-between items-center px-4 py-4">
+      <div className="container mx-auto flex justify-between items-center px-4 py-4">
         {/* Logo */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 ">
           <HiOutlineMenu
-            className="text-2xl cursor-pointer md:hidden"
+            className="text-2xl cursor-pointer lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
           />
           <img
-            src="/basket-logo.png" // Replace with your logo path
+            src={logo} // Replace with your logo path
             alt="Logo"
-            className="h-10"
+            className="h-10 justify-end"
           />
         </div>
 
         {/* Search Bar */}
-        <div className="flex flex-grow max-w-lg items-center bg-white rounded-full overflow-hidden px-4">
+        <div className="lg:flex flex-grow max-w-lg items-center bg-white rounded-full overflow-hidden px-4 hidden">
           <FaSearch className="text-gray-500" />
           <input
             type="text"
@@ -65,7 +66,7 @@ const Navbar = () => {
         </div>
 
         {/* Icons */}
-        <div className="flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <FaTruck className="text-2xl cursor-pointer" />
           <FaUser className="text-2xl cursor-pointer" />
           <div className="relative">
@@ -81,18 +82,18 @@ const Navbar = () => {
       <nav
         className={`${
           menuOpen ? "block" : "hidden"
-        } bg-blue-500 text-white md:flex md:justify-center md:space-x-6 md:items-center md:relative`}
+        } bg-blue-500 text-white lg:flex lg:justify-center lg:space-x-6 lg:items-center lg:relative mx-auto container`}
       >
-        <ul className="flex flex-col md:flex-row md:space-x-6">
-          <li className="py-2 px-4 hover:bg-blue-700">Fresh Vegetables</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Fresh Fruits</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Eggs & Dairy Products</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Spices & Herbs</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Rice & Lentils</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Dry Fish</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Tea & Beverages</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Sweets</li>
-          <li className="py-2 px-4 hover:bg-blue-700">
+        <ul className="flex flex-col lg:flex-row lg:space-x-6">
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700 rounded-xl">Fresh Vegetables</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Fresh Fruits</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Eggs & Dairy Products</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Spices & Herbs</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Rice & Lentils</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700"><p>Dry Fish</p></li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Tea & Beverages</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">Sweets</li>
+          <li className="flex items-center justify-center py-2 px-4 hover:bg-blue-700">
             Puffed Rice & Grain Product
           </li>
           <li className="py-2 px-4 hover:bg-blue-700">Honey</li>

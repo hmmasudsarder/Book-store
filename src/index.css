@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --toastify-color-success: #9f21f3;
+    --toastify-color-error: #f44336;
+    --toastify-color-warning: #ffa726;
+    --toastify-color-info: #2196f3;
+  }
+  
