@@ -1,6 +1,13 @@
 import { useState } from "react";
-import { FaSearch, FaShoppingCart, FaUser, FaTruck, FaCopy } from "react-icons/fa";
+import {
+  FaSearch,
+  FaShoppingCart,
+  FaUser,
+  FaTruck,
+  FaCopy,
+} from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
+import ToastSuccess from "../ui/ToastSuccess";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,21 +17,27 @@ const Navbar = () => {
     navigator.clipboard.writeText("OFFER10");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+    ToastSuccess({ children: "Coupon code copied!" });
   };
 
   return (
     <header className="bg-blue-500 text-white">
       {/* Top Bar */}
       <div className="flex justify-between items-center px-4 py-2 bg-gray-200 text-gray-800">
-        <p>
-          Get 10 Tk Discount use the coupon code 
-          <strong className="underline">OFFER10</strong>
-        </p>
-        <div className="flex items-center space-x-2">
-          <button onClick={handleCopy} className="text-gray-600 flex items-center space-x-1">
-            <FaCopy />
-          </button>
-          {copied && <span className="text-green-500 text-sm">Copied!</span>}
+        <div className="mx-auto flex items-center space-x-2">
+          <p>
+            Get 10 Tk Discount use the coupon code {""}
+            <strong className="underline">OFFER10</strong>
+          </p>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={handleCopy}
+              className="text-gray-600 flex items-center space-x-1"
+            >
+              <FaCopy />
+            </button>
+            {copied && <span className="text-green-500 text-sm">Copied!</span>}
+          </div>
         </div>
       </div>
 
@@ -32,7 +45,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-4 py-4">
         {/* Logo */}
         <div className="flex items-center space-x-4">
-          <HiOutlineMenu 
+          <HiOutlineMenu
             className="text-2xl cursor-pointer md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
           />
@@ -59,7 +72,9 @@ const Navbar = () => {
           <FaUser className="text-2xl cursor-pointer" />
           <div className="relative">
             <FaShoppingCart className="text-2xl cursor-pointer" />
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">1</span>
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">
+              1
+            </span>
           </div>
         </div>
       </div>
@@ -79,7 +94,9 @@ const Navbar = () => {
           <li className="py-2 px-4 hover:bg-blue-700">Dry Fish</li>
           <li className="py-2 px-4 hover:bg-blue-700">Tea & Beverages</li>
           <li className="py-2 px-4 hover:bg-blue-700">Sweets</li>
-          <li className="py-2 px-4 hover:bg-blue-700">Puffed Rice & Grain Product</li>
+          <li className="py-2 px-4 hover:bg-blue-700">
+            Puffed Rice & Grain Product
+          </li>
           <li className="py-2 px-4 hover:bg-blue-700">Honey</li>
         </ul>
       </nav>

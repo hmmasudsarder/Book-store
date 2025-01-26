@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 
 const ToastSuccess = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
-    toast.success('🦄 Wow so easy!', {
+    toast.success(children, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -17,7 +17,7 @@ const ToastSuccess = ({ children }: { children: ReactNode }) => {
       theme: "light",
       transition: Bounce,
     });
-  }, []);
+  }, [children]);
 
   return (
     <div>
