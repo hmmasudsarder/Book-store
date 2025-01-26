@@ -65,7 +65,9 @@ const Navbar = () => {
         {/* Icons (Desktop Only) */}
         <div className="hidden lg:flex items-center space-x-4 my-2">
           <FaTruck className="text-2xl cursor-pointer" />
-          <FaUser className="text-2xl cursor-pointer" />
+          <Link to="/login">
+            <FaUser className="text-2xl cursor-pointer" />
+          </Link>
           <div className="relative">
             <FaShoppingCart className="text-2xl cursor-pointer" />
             <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">

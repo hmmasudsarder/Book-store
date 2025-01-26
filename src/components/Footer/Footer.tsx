@@ -4,7 +4,7 @@ import delevary from "../../assets/bg/delevary1.png";
 import delevary1 from "../../assets/bg/delevary2.png";
 const Footer = () => {
   return (
-    <footer className="bg-white py-20 border-t ">
+    <footer className="bg-white py-20 border-t fixed bottom-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between items-start px-4">
         {/* Left Section - Logo & Contact */}
         <div className="flex flex-col md:flex-row lg:gap-36 md:gap-8 w-full justify-center">
