@@ -1,14 +1,13 @@
+import Navbar from "./components/Header/Navbar";
 
-import { Button } from './components/ui/button'
-
-function App() {
-  
-
+function App({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Button>Click me</Button>
+      <Navbar />
+      {children}
+      <footer>Footer</footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
