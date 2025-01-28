@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-white py-20 border-t ">
       <div className="container mx-auto flex justify-between items-start px-4">
         {/* Left Section - Logo & Contact */}
-        <div className="flex flex-col md:flex-row md:gap-36 w-full justify-center">
+        <div className="flex flex-col md:flex-row lg:gap-36 md:gap-8 w-full justify-center">
           <div className="mx-auto md:mx-0 my-5 text-center md:text-left">
             <div className="ml-7 -mt-[18px]">
               <img src={logo} alt="Shera Jhuri" className="w-24 mx-auto md:mx-0" />
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - Social Media & Partners */}
-          <div className="w-1/4 Lg:-mr-12 mx-auto md:mx-0 text-center md:text-left my-8 lg:my-0">
+          <div className="w-1/4 lg:-mr-12 mx-auto md:mx-0 text-center md:text-left my-8 lg:my-0">
             <h3 className="font-bold text-md mb-2 text-center md:text-left">FOLLOW US</h3>
             <div className="flex space-x-2 mb-4 mx-auto md:mx-0 text-center md:text-left">
               <a href="#" className="bg-blue-500 p-2 rounded text-white">
