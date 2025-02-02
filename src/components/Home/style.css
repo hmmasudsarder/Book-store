@@ -1,0 +1,7 @@
+.mySwiper .swiper-pagination-bullet {
+    background-color: #000; /* Customize dot color */
+  }
+  .mySwiper .swiper-pagination-bullet-active {
+    background-color: #ff5722; /* Customize active dot color */
+  }
+  

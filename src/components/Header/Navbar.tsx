@@ -28,7 +28,7 @@ const Navbar = () => {
             className="lg:font-semibold flex items-center space-x-1 lg:text-lg"
           >
             <p>
-              Get 10 Tk Discount! Use the coupon code{" "}
+              Get 10% Discount! Use the coupon code{" "}
               <strong className="underline lg:font-medium">OFFER10</strong>
             </p>
             <IoMdCopy className="lg:text-xl" />
