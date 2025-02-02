@@ -23,27 +23,27 @@ const categories = [
   { name: "Emily Henry", image: bgBrand4 },
 ];
 
-const HBrandSlider = () => {
+const FeaturedSlider = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-lg font-semibold mb-4">Best Sells</h2>
+    <div className="container mx-auto px-4 py-8 bg-white rounded-xl">
+      <h2 className="text-lg font-semibold mb-4">Featured Product</h2>
       <Swiper
-        slidesPerView={7} // Show 7 cards in the visible area
-        spaceBetween={20} // Space between the cards
-        pagination={{
-          clickable: true, // Add dots navigation
-        }}
+        slidesPerView={8} // Show 7 cards in the visible area
+        spaceBetween={10} // Space between the cards
+        // pagination={{
+        //   clickable: true, // Add dots navigation
+        // }}
         breakpoints={{
-            0: {
-              slidesPerView: 3, // For mobile devices
-            },
-            768: {
-              slidesPerView: 5, // For tablets
-            },
-            1024: {
-              slidesPerView: 7, // For laptops and desktops
-            },
-          }}
+          0: {
+            slidesPerView: 3, // For mobile devices
+          },
+          768: {
+            slidesPerView: 5, // For tablets
+          },
+          1024: {
+            slidesPerView: 7, // For laptops and desktops
+          },
+        }}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
@@ -55,11 +55,11 @@ const HBrandSlider = () => {
         {categories.map((category, index) => (
           <SwiperSlide key={index}>
             <div className="flex flex-col items-center gap-2 cursor-pointer">
-              <div className="bg-white flex items-center justify-center h-32 w-full  rounded-xl group relative overflow-hidden">
+              <div className="flex items-center justify-center h-32 w-full  rounded-xl group relative overflow-hidden">
                 <img
                   src={category.image}
                   alt={category.name}
-                  className={`h-28 rounded-2xl mx-auto group-hover:scale-105 transition-transform duration-500 w-24 md:w-28 lg:w-[90%]`}
+                  className="w-32 h-32 object-cover rounded-full border-[6px] p-[6px] border-gray-200"
                 />
               </div>
               <span className="text-sm font-medium">{category.name}</span>
@@ -71,4 +71,4 @@ const HBrandSlider = () => {
   );
 };
 
-export default HBrandSlider;
+export default FeaturedSlider;

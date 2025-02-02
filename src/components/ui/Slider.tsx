@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import bg1 from "../../assets/bg/download.jpeg";
 import bg2 from "../../assets/bg/download1.jpeg";
 import bg3 from "../../assets/bg/boi-col.jpg";
@@ -36,7 +36,7 @@ const Slider = () => {
   return (
     <div className="w-full max-w-4xl mx-auto py-4">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}

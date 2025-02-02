@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { FaSearch, FaShoppingCart, FaUser, FaTruck } from "react-icons/fa";
-import { IoMdCopy } from "react-icons/io";
+import { MdFileCopy } from "react-icons/md";
 import logo from "../../assets/logo.png"; // Replace with your logo path
 import ToastSuccess from "../ui/ToastSuccess"; // Replace with your toast component if needed
 import { Link } from "react-router-dom";
@@ -23,15 +23,16 @@ const Navbar = () => {
       {/* Top Bar */}
       <div className="bg-gray-200 text-gray-800 px-4 py-2">
         <div className="mx-auto flex justify-center items-center lg:space-x-2">
+          <p className="font-semibold">
+            Get 10% Discount! Use the coupon code{" "}
+          </p>
           <button
             onClick={handleCopy}
             className="lg:font-semibold flex items-center space-x-1 lg:text-lg"
           >
-            <p>
-              Get 10% Discount! Use the coupon code{" "}
-              <strong className="underline lg:font-medium">OFFER10</strong>
-            </p>
-            <IoMdCopy className="lg:text-xl" />
+            <strong className="underline lg:font-medium">OFFER10</strong>
+            <MdFileCopy 
+            className="lg:text-xl" />
           </button>
         </div>
       </div>
@@ -58,7 +59,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search Product..."
-            className="w-full px-3 py-2 focus:outline-none text-black"
+            className="w-full px-3 py-[10px] focus:outline-none text-black"
           />
         </div>
 
