@@ -25,8 +25,8 @@ const categories = [
 
 const HBrandSlider = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-lg font-semibold mb-4">Best Sells</h2>
+    <div className="container mx-auto px-4 py-8 mt-7 bg-white rounded-xl">
+      <h2 className="text-lg font-semibold mb-4 uppercase">Best Sells</h2>
       <Swiper
         slidesPerView={7} // Show 7 cards in the visible area
         spaceBetween={20} // Space between the cards

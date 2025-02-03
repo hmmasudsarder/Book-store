@@ -26,7 +26,7 @@ const categories = [
 const FeaturedSlider = () => {
   return (
     <div className="container mx-auto px-4 py-8 bg-white rounded-xl">
-      <h2 className="text-lg font-semibold mb-4">Featured Product</h2>
+      <h2 className="text-lg font-semibold mb-4">Featured Books</h2>
       <Swiper
         slidesPerView={8} // Show 7 cards in the visible area
         spaceBetween={10} // Space between the cards
@@ -59,7 +59,7 @@ const FeaturedSlider = () => {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-32 h-32 object-cover rounded-full border-[6px] p-[6px] border-gray-200"
+                  className="w-32 h-32 object-cover rounded-full border-[6px] p-[6px] border-gray-200 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
               <span className="text-sm font-medium">{category.name}</span>
