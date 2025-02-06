@@ -140,9 +140,9 @@ const ProductDetails = () => {
           <div className="flex flex-col space-y-4 mt-6">
             {/* Add to Cart and Order Now Buttons */}
             <div className="flex space-x-4">
-              <button className="flex-1 bg-pink-500 hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform text-white font-semibold py-3 rounded-xl">
+              {/* <button className="flex-1 bg-pink-500 hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform text-white font-semibold py-3 rounded-xl">
                 Add To Cart
-              </button>
+              </button> */}
               <button className="flex-1 bg-blue-500 hover:bg-gradient-to-br from-pink-700 to-pink-400 transition duration-500 transform text-white font-semibold py-3 rounded-xl" onClick={handleBuyNow}>
                 Order Now
               </button>
@@ -202,7 +202,7 @@ const ProductDetails = () => {
             <div>
               <h3 className="text-lg font-bold text-gray-800">Description</h3>
               <p className="text-gray-700 mt-2">
-                সেরা ঝুরি - ১০০% খাঁটি ঝুরির গুঁড়ো...
+                {product?.description}
               </p>
             </div>
           )}

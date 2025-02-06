@@ -59,6 +59,11 @@ const AllProducts = () => {
   //     setSortOption(undefined);
   //   };
 
+  const truncateName = (name: string, maxLength: number) => {
+    if (name.length <= maxLength) return name;
+    return name.slice(0, maxLength - 3) + "...";
+  };
+
   return (
     <div className="container mx-auto px-4 mt-28 lg:mt-40 min-h-screen">
       {/* products header and filtering  */}
@@ -121,11 +126,11 @@ const AllProducts = () => {
                 />
               </div>
               <h3 className="text-center text-lg font-medium mt-2">
-                {product.name}
+                {truncateName(product.name, 23)}
               </h3>
               <div className="text-center text-gray-500">
                 <span className="line-through text-sm">
-                  ৳ {product.oldPrice}
+                  {/* ৳ {product.oldPrice} */}
                 </span>{" "}
                 <span className="text-blue-600 font-semibold">
                   ৳ {product.price}

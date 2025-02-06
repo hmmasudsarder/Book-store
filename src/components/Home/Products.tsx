@@ -91,11 +91,11 @@ const Products = () => {
               {product.name}
             </h3>
             <div className="text-center text-gray-500">
-              <span className="line-through text-sm">
+              {/* <span className="line-through text-sm">
                 ৳ {product.oldPrice}
-              </span>{" "}
+              </span>{" "} */}
               <span className="text-blue-600 font-semibold">
-                ৳ {product.newPrice}
+                ৳ {product.price}
               </span>
             </div>
             <Link to={`/product/${product._id}`}>
