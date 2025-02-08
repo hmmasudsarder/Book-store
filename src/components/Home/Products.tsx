@@ -72,7 +72,7 @@ const Products = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {products?.map((product) => (
+        {products?.map((product: any) => (
           <div
             key={product.id}
             className="border rounded-xl p-2 shadow-sm hover:shadow-lg transition duration-500"
