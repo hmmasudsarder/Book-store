@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import { useGetAllProductsQuery } from "../../redux/features/admin/productManagement.api";
 
