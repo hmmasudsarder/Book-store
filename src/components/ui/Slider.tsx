@@ -1,7 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
@@ -22,12 +20,12 @@ const slides = [
     alt: "Bakery Products",
   },
   {
-    id: 1,
+    id: 3,
     image: bg3,
     alt: "Fresh Fruits",
   },
   {
-    id: 2,
+    id: 4,
     image: bg3,
     alt: "Bakery Products",
   },

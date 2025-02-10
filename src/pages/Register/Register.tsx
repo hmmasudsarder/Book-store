@@ -1,67 +1,61 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import {FieldValues, useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FieldValues, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { useRegisterMutation } from "../../redux/features/auth/authApi";
 import { toast } from "react-toastify";
-import { useAppDispatch } from "../../redux/hooks";
-import { useLoginMutation } from "../../redux/features/auth/authApi";
-import { setUser, TUser } from "../../redux/features/auth/authSlice";
-import { verifyToken } from "../../utils/verifyToken";
 
-const Login = () => {
+const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-  const dispatch = useAppDispatch();
-  const [login] = useLoginMutation();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  const [registerUser, ] = useRegisterMutation();
+
   const onSubmit = async (data: FieldValues) => {
     console.log("Form Data:", data);
-  
     try {
-      const userInfo = {
-        email: data.email,
-        password: data.password,
-      };
-      console.log("User Info:", userInfo);
-  
-      const res = await login(userInfo).unwrap();
-      // console.log("API Response:", res);
-  
-      if (res.success) {
-        const user = verifyToken(res.data.token) as TUser;
-        // console.log("Decoded User:", user);
-  
-        dispatch(setUser({ user: user, token: res.data.token }));
-        toast.success(`${res.message}`);
-  
-        // Navigate to the homepage
-        navigate(location.state?.from?.pathname || "/", { replace: true });
-      } else {
-        throw new Error(res.message || "Login failed");
-      }
+        // call register auth 
+      const res = await registerUser(data).unwrap();
+      toast.success(`${res.message}`);
+    //   console.log("Registration Response:", res);
+      navigate(`/`);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
-      console.error("Error during login:", err);
-      toast.error(err.data.message  || "Something went wrong",);
-    }
+         console.error("Error during login:", );
+         toast.error(err.data.message || "Something went wrong");
+       }
   };
   return (
-    <div className="flex justify-center pt-36 items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center pt-48 items-center min-h-screen bg-gray-100 pb-7">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
         <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">
-          CUSTOMER LOGIN{/* Updated title */}
+          CUSTOMER REGISTER{/* Updated title */}
         </h2>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg"
         >
-        
+          <div>
+            <label
+              className="block text-sm font-medium text-gray-700 mb-1"
+              htmlFor="full-name"
+            >
+              Full Name *
+            </label>
+            <input
+              type="text"
+              id="full-name"
+              {...register("name", { required: "Name is required" })}
+              placeholder="Enter your full name"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              required
+            />
+          </div>
           <div>
             <label
               className="block text-sm font-medium text-gray-700 mb-1"
@@ -71,8 +65,8 @@ const Login = () => {
             </label>
             <input
               type="email"
-              id="email"
               {...register("email", { required: "Email is required" })}
+              id="email"
               placeholder="Enter your Email Address"
               className="w-full border border-gray-300 rounded-lg px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               required
@@ -116,13 +110,13 @@ const Login = () => {
             type="submit"
             className="w-full px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
           >
-            LOGIN {/* Updated button text */}
+            REGISTER {/* Updated button text */}
           </button>
         </form>
-        <p className="text-center text-gray-600 mt-4">
-        You Have No Account ? {" "}  
-          <Link to="/signUp" className="text-blue-500 hover:underline">
-          Click To Register
+        <p className=" text-center text-gray-600 mt-4">
+          If you have an account ?{" "}
+          <Link to="/login" className="text-blue-500 hover:underline">
+            Login here
           </Link>
         </p>
       </div>
@@ -130,4 +124,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
