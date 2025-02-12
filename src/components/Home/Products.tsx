@@ -60,6 +60,10 @@ const Products = () => {
         <span className="justify-center loading loading-spinner loading-lg"></span>
       </div>
     );
+  const truncateName = (name: string, maxLength: number) => {
+    if (name.length <= maxLength) return name;
+    return name.slice(0, maxLength - 3) + "...";
+  };
   return (
     <div className="container mx-auto px-4 my-14 pb-12 pt-7 bg-white rounded-lg">
       <div className="flex justify-between items-center mb-5">
@@ -81,7 +85,7 @@ const Products = () => {
             <div className="relative group overflow-hidden">
               <span className="absolute top-0 z-10 right-0 bg-blue-500 text-white text-xs px-2 py-[6px] rounded-xl">
                 {/* {product.discount} */}
-                Discount 
+                Discount
               </span>
               <img
                 src={product?.productImg}
@@ -90,7 +94,7 @@ const Products = () => {
               />
             </div>
             <h3 className="text-center text-lg font-medium mt-2">
-              {product.name}
+              {truncateName(product.name, 12)}
             </h3>
             <div className="text-center text-gray-500">
               {/* <span className="line-through text-sm">

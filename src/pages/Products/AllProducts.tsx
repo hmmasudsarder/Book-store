@@ -127,7 +127,7 @@ const AllProducts = () => {
                 />
               </div>
               <h3 className="text-center text-lg font-medium mt-2">
-                {truncateName(product.name, 23)}
+                {truncateName(product.name, 12)}
               </h3>
               <div className="text-center text-gray-500">
                 <span className="line-through text-sm">

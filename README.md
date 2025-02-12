@@ -1,50 +1,111 @@
-# React + TypeScript + Vite
+# 🚴‍♂️ Book Store - Book Shop Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
+Book Store is a full-featured e-commerce application designed for buying and selling books. It includes user-friendly features, secure authentication, smooth product management, and a responsive UI for an optimal shopping experience.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies Used
+- **Frontend:** React, TypeScript, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** JWT (JSON Web Token)
+- **Payment Gateway:** SurjoPay
+- **State Management:** Redux Toolkit
+- **Deployment:** Vercel (Backend), (front)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔑 Main Features
+### 👥 User Registration & Authentication (Role-Based)
+- Secure Registration & Login
+  - Users register with **name, email, and password**
+  - Default role: **Customer**
+  - Admin role manually assigned (no Super Admin needed)
+  - Passwords securely hashed 🔒
+- **JWT Token Authentication**
+  - Generates a secure token on login
+  - Stores the token in local storage for session management
+- **Logout**
+  - Clears token and redirects user to login page
 
-## Expanding the ESLint configuration
+### 🌍 Public Routes
+#### 🏠 Home Page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### 🚴 All Products Page
+- **Search & Filter**
+  - Search by **author, book name, or category** 🔍
+  - Filters for **price range, category, and availability**
+  - Dynamic results updating in real-time
+- **Product Cards**
+  - Name, author, price, category
+  - "View Details" button for each product
 
-- Configure the top-level `parserOptions` property like this:
+#### 📦 Product Details Page
+- Displays **product image and full details** 🏷️
+- **"Buy Now" button** redirects to checkout page
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+#### ℹ️ About Page
+- Information about Book shop, mission, and other details
+
+### 🔒 Private Routes
+#### 💳 Checkout Page
+- Users can place orders with a **secure checkout process**
+- Ensures **stock availability** before confirming orders
+- **Order Form**
+  - Product details
+  - User details
+  - Total price calculation
+  - Payment method selection
+- **Payment Integration**
+  - Implemented **SurjoPay** as the payment gateway ✅
+  - "Order Now" button to confirm purchase
+
+#### 📊 Dashboard (Role-Based Access)
+- **Admin Dashboard** 🛠️
+  - Manage Users (e.g., Deactivate Accounts)
+  - Manage Products (**CRUD**)
+  - Manage Orders (**CRUD**)
+- **User Dashboard** 👤
+  - View Orders
+  - Manage Profile Settings
+
+
+## 🚀 Installation & Setup
+### 💻 Backend Setup
+```sh
+# Clone the repository
+
+# Install dependencies
+npm install
+
+# Set up environment variables (.env)
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+SURJOPAY_API_KEY=your_api_key
+JWT_REFRESH_SECRET=your_jwt_secret
+
+# Start the backend server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 🌐 Frontend Setup
+```sh
+cd ../frontend
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+# Install dependencies
+npm install
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+# Start the frontend server
+npm run dev
 ```
+
+## 🎯 Future Enhancements
+- 📦 Implement Wishlist & Cart functionality
+- 🌟 Add user reviews & ratings for products
+- 📅 Order tracking system
+- 📢 Email notifications for order updates
+
+
+## 🎯 Live Project Front End Link : https://bike-house-l2-as4.netlify.app/
+## 🎯 Live Project back End Link : https://l-2-assignment-bike-store-server.vercel.app/api/products
+
+## ✨ Developed By
+🚀 **Saiful Islam Shaikot**  
+
