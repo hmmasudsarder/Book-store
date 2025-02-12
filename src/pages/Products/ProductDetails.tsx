@@ -65,11 +65,11 @@ const ProductDetails = () => {
             alt={product?.name || "Product"}
             className="w-full h-[650px] rounded-xl shadow"
           />
-          {product.discount && (
+          {/* {product.discount && (
             <span className="absolute top-2 left-2 bg-blue-500 text-white text-xs px-2 py-1 rounded">
               {product.discount}% Discount
             </span>
-          )}
+          )} */}
         </div>
 
         {/* Product Details */}
@@ -86,11 +86,11 @@ const ProductDetails = () => {
           {/* Product Name and Price */}
           <h1 className="text-2xl font-bold text-gray-800">{product?.name}</h1>
           <div className="mt-2">
-            {product.originalPrice && (
+            {/* {product.originalPrice && (
               <span className="line-through text-gray-400 mr-2">
                 ৳ {product.originalPrice}
               </span>
-            )}
+            )} */}
             <span className="text-2xl font-bold">৳ {product.price}</span>
           </div>
 

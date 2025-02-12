@@ -117,7 +117,8 @@ const AllProducts = () => {
             >
               <div className="relative group overflow-hidden">
                 <span className="absolute top-0 z-10 right-0 bg-blue-500 text-white text-xs px-2 py-[6px] rounded-xl">
-                  {product.discount} Discount
+                  {/* {product.discount} */}
+                   Discount 
                 </span>
                 <img
                   src={product?.productImg}
