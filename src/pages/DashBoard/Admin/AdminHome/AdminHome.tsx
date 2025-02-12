@@ -4,7 +4,7 @@ import { useGetRevenueDataQuery } from "../../../../redux/features/admin/order/o
 const AdminHome = () => {
   const { data,  } = useGetRevenueDataQuery(undefined);
   const revenue = data?.data || [];
-  console.log(revenue);
+  console.log(data);
 
   return (
     <div>

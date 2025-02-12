@@ -13,8 +13,7 @@ import { toast } from 'react-toastify';
 
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: 'https://l-2-assignment-bike-store-server.vercel.app/api',
-  baseUrl: 'http://localhost:5000/api',
+  baseUrl: 'https://book-shop-server-kohl.vercel.app/api',
   credentials: 'include',
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
