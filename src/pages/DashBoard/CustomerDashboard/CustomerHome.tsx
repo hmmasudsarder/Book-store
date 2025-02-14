@@ -19,7 +19,7 @@ const CustomerHome = () => {
                         <p className="text-xl">Loading users...</p>
                     ) : error ? (
                         <p className="text-xl text-red-500">Failed to load users</p>
-                    ) : orders && orders.length > 0 ? (
+                    ) : orders && orders?.length > 0 ? (
                         <table className="w-full text-md bg-white shadow-md rounded mb-4">
                             <thead>
                                 <tr className="border-b bg-gray-300">
@@ -40,7 +40,7 @@ const CustomerHome = () => {
                                         <td className="p-3 px-5">{order?.status}</td>
                                         <td className="p-3 px-5">{order?.totalPrice}</td>
                                         <td className="p-3 px-5 flex justify-end gap-2">
-                                            {order?.transaction?.sp_message
+                                            {order?.transaction?.transactionStatus
                                             }
                                         </td>
                                     </tr>

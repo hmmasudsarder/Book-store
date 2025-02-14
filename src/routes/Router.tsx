@@ -18,6 +18,7 @@ import ProductsUpdated from "../pages/DashBoard/Admin/AddProduct/ProductsUpdated
 import AdminProfile from "../pages/DashBoard/Admin/AdminHome/AdminProfile";
 import AllUsers from "../pages/DashBoard/Admin/AdminHome/AllUsers";
 import AdminOrderDetailes from "../pages/DashBoard/Admin/Order/AdminOrderDetails";
+import OrderConfirm from "../components/ui/OrderConfirm";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <PrivateRoute><Checkout /></PrivateRoute>
+      },
+      {
+        path: '/orderConfirm',
+        element: <PrivateRoute><OrderConfirm /></PrivateRoute>
       },
       {
         path: "/login",
