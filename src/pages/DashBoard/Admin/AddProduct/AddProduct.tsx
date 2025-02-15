@@ -72,28 +72,15 @@ const onSubmit = async (data: any) => {
               type="text"
               className="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
             />
-            {errors && (<p className="text-red-500 text-sm">This field is required</p>
+            {errors.book && (<p className="text-red-500 text-sm">This field is required</p>
             )}
           </div>
           <div className="w-full relative">
             <label className="flex items-center mb-2 text-gray-600 text-sm font-medium">
-              Model <FaStarOfLife className="text-[#F2355F] text-[7px] ml-1" />
+            Author <FaStarOfLife className="text-[#F2355F] text-[7px] ml-1" />
             </label>
             <input
-              {...register("model", { required: "Model is required" })}
-              type="text"
-              className="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
-            />
-            {errors.model && (
-              <p className="text-red-500 text-sm">This field is required</p>
-            )}
-          </div>
-          <div className="w-full relative">
-            <label className="flex items-center mb-2 text-gray-600 text-sm font-medium">
-             Brand <FaStarOfLife className="text-[#F2355F] text-[7px] ml-1" />
-            </label>
-            <input
-              {...register("brand", { required: "Model is required" })}
+              {...register("author", { required: "Model is required" })}
               type="text"
               className="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none"
             />
@@ -114,11 +101,11 @@ const onSubmit = async (data: any) => {
               className="block w-full h-11 px-5 py-2.5 bg-white leading-7 text-base font-normal shadow-xs text-gray-900 border border-gray-300 rounded-full placeholder-gray-400 focus:outline-none appearance-none"
             >
               <option value="">Select a category</option>
-              <option value="Mountain">Mountain</option>
-              <option value="Road">Road</option>
-              <option value="Hybrid">Hybrid</option>
-              <option value="Electric">Electric</option>
-              <option value="Gravel">Gravel</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="History">History</option>
+              <option value="Science">Science</option>
+              <option value="Business">Business</option>
+              <option value="Technology">Technology</option>
             </select>
             {errors.category && (
               <p className="text-red-500 text-sm">This field is required</p>

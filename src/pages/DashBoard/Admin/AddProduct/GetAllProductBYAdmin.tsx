@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import  { useState } from "react";
+import { useState } from "react";
 // import { useGetAllProductsQuery } from "../../redux/features/admin/productManagement.api";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDeleteProductMutation, useGetAllProductsQuery } from "../../../../redux/features/admin/productManagement.api";
 import { toast } from "react-toastify";
 
@@ -18,15 +18,15 @@ const GetAllProductBYAdmin = () => {
   //   const [limit, setLimit] = useState(20);
   const [finalSearchTerm, setFinalSearchTerm] = useState<string | undefined>(undefined);
 
-  const handleFilterChange = (value:any) => {
+  const handleFilterChange = (value: any) => {
     if (value === "all") {
       setFilterCategory(undefined);
     } else {
       setFilterCategory(value);
     }
   };
-  const handleFilterInStock = (value:any) => setFilterInStock(value);
-  const handleSortChange = (value:any) => setSortOption(value);
+  const handleFilterInStock = (value: any) => setFilterInStock(value);
+  const handleSortChange = (value: any) => setSortOption(value);
   const handleSearchClick = () => {
     setFinalSearchTerm(searchTerm);
   };
@@ -37,8 +37,8 @@ const GetAllProductBYAdmin = () => {
     sort: sortOption,
     // page,
     // limit,
-  },{ refetchOnMountOrArgChange: true });
- const [deleteProduct]=useDeleteProductMutation()
+  }, { refetchOnMountOrArgChange: true });
+  const [deleteProduct] = useDeleteProductMutation()
   const products = data?.data || [];
   console.log(products);
 
@@ -56,22 +56,22 @@ const GetAllProductBYAdmin = () => {
     setFilterInStock(undefined);
     setSortOption(undefined);
   };
-//   updated  product ar jono pataitechi 
-  const handleUpdateClick = (product:any) => {
+  //   updated  product ar jono pataitechi 
+  const handleUpdateClick = (product: any) => {
     console.log("navigating to update:", product);
     navigate(`/dashboard/update-product/${product._id}`, { state: { product } });
   };
 
-//   for deleted operation
-const handleDeleteClick = async (id:any) => {
+  //   for deleted operation
+  const handleDeleteClick = async (id: any) => {
 
     try {
       const res = await deleteProduct(id).unwrap();
-    //   console.log('product deleted:', res);
-    toast.success(res?.message || "Product deleted successfully!");
-    } catch (err:any) {
-      console.error( err);
-       toast.error(err?.data?.message || "Something went wrong");
+      //   console.log('product deleted:', res);
+      toast.success(res?.message || "Product deleted successfully!");
+    } catch (err: any) {
+      console.error(err);
+      toast.error(err?.data?.message || "Something went wrong");
     }
   };
 
@@ -90,12 +90,12 @@ const handleDeleteClick = async (id:any) => {
                 onChange={(e) => handleFilterChange(e.target.value)}
                 className="w-full sm:w-48 px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-1"
               >
-                <option value="all">All Categories</option>
-                <option value="Mountain">Mountain</option>
-                <option value="Road">Road</option>
-                <option value="Hybrid">Hybrid</option>
-                <option value="Electric">Electric</option>
-                <option value="Gravel">Gravel</option>
+                <option value="">Select a category</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="History">History</option>
+                <option value="Science">Science</option>
+                <option value="Business">Business</option>
+                <option value="Technology">Technology</option>
               </select>
             </div>
 
@@ -130,7 +130,7 @@ const handleDeleteClick = async (id:any) => {
                 value={searchTerm || ""}
                 onChange={(e) => setSearchTerm(e.target.value)} // update searchTer input change
                 className="w-full p-2.5 text-sm text-gray-900 bg-gray-50 rounded-sm border-s-gray-50 border-s-2 border border-gray-300"
-                placeholder="Search Product by Name, Model, Brand'..."
+                placeholder="Search Product by Name, author, ..."
                 required
               />
               <button
@@ -194,10 +194,10 @@ const handleDeleteClick = async (id:any) => {
                     deleted
                   </button>
                   <button
-                   onClick={() => handleUpdateClick({ _id: product._id, name: product.name, price: product.price, description: product.description, productImg: product.productImg, model: product.model, category: product.category, brand: product.brand, quantity: product.quantity })}
+                    onClick={() => handleUpdateClick({ _id: product._id, name: product.name, price: product.price, description: product.description, productImg: product.productImg, model: product.model, category: product.category, brand: product.brand, quantity: product.quantity })}
                     className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-[#F2355F] focus:outline-none focus:ring-4 "
                   >
-                   updated
+                    updated
                   </button>
                 </div>
               </div>
