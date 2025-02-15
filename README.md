@@ -103,9 +103,9 @@ npm run dev
 - 📢 Email notifications for order updates
 
 
-## 🎯 Live Project Front End Link : https://bike-house-l2-as4.netlify.app/
-## 🎯 Live Project back End Link : https://l-2-assignment-bike-store-server.vercel.app/api/products
+## 🎯 Live Project Front End Link : https://book-shop-theta-bay.vercel.app/
+## 🎯 Live Project back End Link : https://book-shop-server-kohl.vercel.app/api/products
 
 ## ✨ Developed By
-🚀 **Saiful Islam Shaikot**  
+🚀 **Masud Sarder**  
 
