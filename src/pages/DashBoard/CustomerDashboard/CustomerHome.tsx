@@ -17,8 +17,6 @@ const CustomerHome = () => {
                 <div className="text-gray-900 bg-gray-200 px-3 py-4 flex justify-center">
                     {isLoading ? (
                         <p className="text-xl">Loading users...</p>
-                    ) : error ? (
-                        <p className="text-xl text-red-500">Failed to load users</p>
                     ) : orders && orders?.length > 0 ? (
                         <table className="w-full text-md bg-white shadow-md rounded mb-4">
                             <thead>
@@ -47,9 +45,13 @@ const CustomerHome = () => {
                                 ))}
                             </tbody>
                         </table>
-                    ) : (
-                        <p className="text-xl text-gray-600">No users found.</p>
-                    )}
+                    )
+                        : error ? (
+                            <p className="text-xl text-red-500">Failed to load users</p>
+                        )
+                            : (
+                                <p className="text-xl text-gray-600">No users found.</p>
+                            )}
                 </div>
             </div>
         </div>

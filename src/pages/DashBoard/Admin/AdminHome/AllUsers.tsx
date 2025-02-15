@@ -6,7 +6,7 @@ const AllUsers = () => {
     const { data, error, isLoading } = useGetAllUsersQuery(undefined);
     const [blockUser] = useBlockUserMutation()
     const users = data?.data || [];
-    console.log(users);
+    console.log(data);
 
 
     //  handler block
