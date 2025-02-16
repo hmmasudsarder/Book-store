@@ -51,8 +51,8 @@ const Slider = () => {
               />
               <div className="absolute inset-0 bg-black/60 ">
                 <div className="flex flex-col items-start justify-center h-full px-14">
-                  <h1 className="text-3xl text-white">Hello Bangladesh</h1>
-                  <h1 className="text-xl text-white flex">Hello Bangladesh</h1>
+                  <h1 className="text-5xl text-white w-3/6 font-semibold">Our Store: All Books 30% OFF! Limited Time Offer!</h1>
+                  {/* <h1 className="text-xl text-white flex">Hello Bangladesh</h1> */}
                 </div>
               </div>
             </div>

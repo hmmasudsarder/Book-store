@@ -174,6 +174,12 @@ const Navbar = () => {
         >
           All Products
         </Link>
+        <Link
+          to="/aboutUs"
+          className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl focus:!bg-blue-600"
+        >
+          About US
+        </Link>
       </nav>
 
       {/* Sidebar (Mobile Navigation) */}
@@ -236,6 +242,12 @@ const Navbar = () => {
             className="text-black hover:text-blue-600 hover:bg-gray-100 py-2 px-4 rounded-lg font-semibold"
           >
             All Products
+          </Link>
+          <Link
+            to="/aboutUs"
+            className="text-black hover:text-blue-600 hover:bg-gray-100 py-2 px-4 rounded-lg font-semibold"
+          >
+            About US
           </Link>
           {/* <a
             href="#"
