@@ -19,6 +19,7 @@ import AdminProfile from "../pages/DashBoard/Admin/AdminHome/AdminProfile";
 import AllUsers from "../pages/DashBoard/Admin/AdminHome/AllUsers";
 import AdminOrderDetailes from "../pages/DashBoard/Admin/Order/AdminOrderDetails";
 import OrderConfirm from "../components/ui/OrderConfirm";
+import About from "../pages/About/About";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/allProduct",
         element: <AllProducts />,
+      },
+      {
+        path: "/aboutUs",
+        element: <About />,
       },
       {
         path: "/product/:id",
