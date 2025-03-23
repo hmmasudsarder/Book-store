@@ -3,6 +3,7 @@ import { useGetAllProductsQuery } from "../../redux/features/admin/productManage
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { ChevronRight } from "lucide-react";
+import RelaventProduct from "./RelaventProduct";
 
 const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState("description");
@@ -220,6 +221,7 @@ const ProductDetails = () => {
           )}
         </div>
       </div>
+      <RelaventProduct />
     </div >
   );
 };

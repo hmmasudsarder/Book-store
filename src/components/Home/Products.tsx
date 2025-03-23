@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import { useGetAllProductsQuery } from "../../redux/features/admin/productManagement.api";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 // const products = [
 //   {
@@ -93,22 +94,32 @@ const Products = () => {
                 className="w-auto mx-auto h-48 object-contain group-hover:scale-105 transition-transform duration-500 "
               />
             </div>
-            <h3 className="text-center text-lg font-medium mt-2">
-              {truncateName(product.name, 12)}
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-center text-lg font-medium mt-2">
+                {truncateName(product.name, 15)}
+              </h3>
+              <button className="text-black p-4 font-semibold">
+                ⭐ 4.5
+              </button>
+            </div>
             <div className="text-center text-gray-500">
-              {/* <span className="line-through text-sm">
-                ৳ {product.oldPrice}
-              </span>{" "} */}
+              <span className="line-through text-sm">
+                ৳ {product?.price - 30}
+              </span>{" "}
               <span className="text-blue-600 font-semibold">
                 ৳ {product.price}
               </span>
             </div>
-            <Link to={`/product/${product._id}`}>
-              <button className="w-full bg-pink-500 text-white py-[6px] mt-3 mb-2 rounded-xl hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform">
-                🛒 View Details
+            <div >
+            <Link to={`/product/${product._id}`} className="flex items-center justify-between gap-4">
+              <button className=" flex-grow bg-pink-500 text-white py-[6px] mt-3 mb-2 rounded-xl hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform">
+                 View Details
+              </button>
+              <button className="font-semibold text-lg">
+              <MdOutlineShoppingCart />
               </button>
             </Link>
+            </div>
           </div>
         ))}
       </div>

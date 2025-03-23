@@ -13,6 +13,7 @@ const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dispatch = useAppDispatch();
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const user = useAppSelector(selectCurrentUser);
 
 
@@ -32,6 +33,7 @@ const Navbar = () => {
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+  const toggleMegaMenu = (state: boolean) => setIsMegaMenuOpen(state);
 
   const handleCopy = () => {
     navigator.clipboard.writeText("OFFER10");
@@ -85,7 +87,7 @@ const Navbar = () => {
 
         {/* Icons (Desktop Only) */}
         <div className="hidden lg:flex items-center space-x-4 my-2">
-        <FaTruck className="text-2xl cursor-pointer" />
+          <FaTruck className="text-2xl cursor-pointer" />
           <div className="relative">
             {/* User Icon */}
             <FaUser
@@ -131,7 +133,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation Links */}
-      <nav className="hidden lg:flex justify-center bg-blue-500 text-white space-x-6">
+      <nav className="hidden lg:flex justify-center bg-blue-500 text-white space-x-6" >
         {/* <a
           href="#"
           className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl"
@@ -165,21 +167,57 @@ const Navbar = () => {
         <Link
           to="/"
           className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl focus:!bg-blue-600"
-        >
+          onMouseLeave={() => toggleMegaMenu(false)}>
           Home
         </Link>
         <Link
           to="/allProduct"
           className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl focus:!bg-blue-600"
-        >
+          onMouseLeave={() => toggleMegaMenu(false)}>
           All Products
         </Link>
         <Link
           to="/aboutUs"
           className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl focus:!bg-blue-600"
-        >
+          onMouseLeave={() => toggleMegaMenu(false)}>
           About US
         </Link>
+        <div className="relative" onMouseEnter={() => toggleMegaMenu(true)} >
+          <button className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl">Categories</button>
+          {isMegaMenuOpen && (
+            <div className="absolute -left-96 mt-2 w-[800px] bg-white shadow-lg p-4 border border-gray-300 z-20"  onMouseLeave={() => toggleMegaMenu(false)}>
+              <div className="grid grid-cols-3 gap-6 text-black">
+                <div>
+                  <h3 className="font-bold mb-2">শ্রেণি</h3>
+                  <ul className="space-y-2">
+                    <li className="hover:text-secondary"><Link to="/">ষষ্ঠ শ্রেণি</Link></li>
+                    <li>সপ্তম শ্রেণি</li>
+                    <li>অষ্টম শ্রেণি</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold mb-2">নবম ও দশম</h3>
+                  <ul className="space-y-2">
+                    <li>জীববিজ্ঞান পাঠ সহায়িকা</li>
+                    <li>রসায়ন পাঠ সহায়িকা</li>
+                    <li>গণিত পাঠ সহায়িকা</li>
+                    <li>ইংরেজি পাঠ সহায়িকা</li>
+                    <li>উচ্চতর গণিত পাঠ সহায়িকা</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold mb-2">এইচএসসি</h3>
+                  <ul className="space-y-2">
+                    <li>উচ্চতর গণিত</li>
+                    <li>জীববিজ্ঞান পাঠ সহায়িকা</li>
+                    <li>পদার্থবিজ্ঞান পাঠ সহায়িকা</li>
+                    <li>রসায়ন পাঠ সহায়িকা</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </nav>
 
       {/* Sidebar (Mobile Navigation) */}
