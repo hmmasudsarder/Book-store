@@ -21,14 +21,12 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log("Form Data:", data);
   
     try {
       const userInfo = {
         email: data.email,
         password: data.password,
       };
-      console.log("User Info:", userInfo);
   
       const res = await login(userInfo).unwrap();
       // console.log("API Response:", res);
@@ -80,7 +78,7 @@ const Login = () => {
           </div>
           {/* Password Input */}
           <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium text-gray-700">
+            <label className="block my-2 text-sm font-medium text-gray-700">
               Password* {/* Added asterisk */}
             </label>
             <div className="relative">

@@ -58,10 +58,10 @@ const Register = () => {
           </div>
           <div>
             <label
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-gray-700 my-2"
               htmlFor="mobile-number"
             >
-              Email Address
+              Email Address *
             </label>
             <input
               type="email"

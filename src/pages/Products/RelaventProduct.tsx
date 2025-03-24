@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -52,7 +52,8 @@ const RelaventProduct = () => {
                 modules={[Autoplay]}
                 spaceBetween={20}
                 slidesPerView={4}
-                
+                // navigation 
+                // pagination={{ clickable: true}}
                 autoplay={{ delay: 10000, disableOnInteraction: false }} // Auto-slide every 10s
                 breakpoints={{
                     1024: { slidesPerView: 4 },
