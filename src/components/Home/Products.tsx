@@ -111,14 +111,14 @@ const Products = () => {
               </span>
             </div>
             <div >
-            <Link to={`/product/${product._id}`} className="flex items-center justify-between gap-4">
-              <button className=" flex-grow bg-pink-500 text-white py-[6px] mt-3 mb-2 rounded-xl hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform">
-                 View Details
-              </button>
-              <button className="font-semibold text-lg">
-              <MdOutlineShoppingCart />
-              </button>
-            </Link>
+              <Link to={`/product/${product._id}`} className="flex items-center justify-between gap-4">
+                <button className=" flex-grow bg-pink-500 text-white py-[6px] mt-3 mb-2 rounded-xl hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform">
+                  View Details
+                </button>
+                <button className="font-semibold text-lg border-2 border-gray-500 rounded-full p-2">
+                  <MdOutlineShoppingCart className="text-lg" />
+                </button>
+              </Link>
             </div>
           </div>
         ))}
