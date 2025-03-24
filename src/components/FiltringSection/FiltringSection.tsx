@@ -19,7 +19,7 @@ const FilterSection = () => {
           min="0"
           max="5000"
           value={selectedPrice}
-          onChange={(e) => setSelectedPrice(e.target.value)}
+          onChange={(e) => setSelectedPrice(Number(e.target.value))}
           className="w-full mt-2"
         />
         <div className="flex justify-between text-base">
