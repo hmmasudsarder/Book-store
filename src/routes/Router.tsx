@@ -20,6 +20,7 @@ import AllUsers from "../pages/DashBoard/Admin/AdminHome/AllUsers";
 import AdminOrderDetailes from "../pages/DashBoard/Admin/Order/AdminOrderDetails";
 import OrderConfirm from "../components/ui/OrderConfirm";
 import About from "../pages/About/About";
+import Blogs from "../pages/Blogs/Blogs";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutUs",
         element: <About />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
       {
         path: "/product/:id",

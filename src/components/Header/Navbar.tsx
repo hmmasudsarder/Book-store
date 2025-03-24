@@ -191,33 +191,39 @@ const Navbar = () => {
                   <h3 className="font-bold mb-2">শ্রেণি</h3>
                   <ul className="space-y-2">
                     <li className="hover:text-secondary"><Link to="/">ষষ্ঠ শ্রেণি</Link></li>
-                    <li>সপ্তম শ্রেণি</li>
-                    <li>অষ্টম শ্রেণি</li>
+                    <li className="hover:text-secondary"><Link to="/">সপ্তম শ্রেণি</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">অষ্টম শ্রেণি</Link></li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold mb-2">নবম ও দশম</h3>
                   <ul className="space-y-2">
-                    <li>জীববিজ্ঞান পাঠ সহায়িকা</li>
-                    <li>রসায়ন পাঠ সহায়িকা</li>
-                    <li>গণিত পাঠ সহায়িকা</li>
-                    <li>ইংরেজি পাঠ সহায়িকা</li>
-                    <li>উচ্চতর গণিত পাঠ সহায়িকা</li>
+                    <li className="hover:text-secondary"><Link to="/">জীববিজ্ঞান পাঠ সহায়িকা</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">রসায়ন পাঠ সহায়িকা</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">গণিত পাঠ সহায়িকা</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">ইংরেজি পাঠ সহায়িকা</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">উচ্চতর গণিত পাঠ সহায়িকা</Link></li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold mb-2">এইচএসসি</h3>
                   <ul className="space-y-2">
-                    <li>উচ্চতর গণিত</li>
-                    <li>জীববিজ্ঞান পাঠ সহায়িকা</li>
-                    <li>পদার্থবিজ্ঞান পাঠ সহায়িকা</li>
-                    <li>রসায়ন পাঠ সহায়িকা</li>
+                    <li className="hover:text-secondary"><Link to="/">উচ্চতর গণিত</Link></li>
+                    <li className="hover:text-secondary"><Link to="/">জীববিজ্ঞান পাঠ</Link> সহায়িকা</li>
+                    <li className="hover:text-secondary"><Link to="/">পদার্থবিজ্ঞান পাঠ</Link> সহায়িকা</li>
+                    <li className="hover:text-secondary"><Link to="/">রসায়ন পাঠ</Link> সহায়িকা</li>
                   </ul>
                 </div>
               </div>
             </div>
           )}
         </div>
+        <Link
+          to="/blogs"
+          className="hover:bg-blue-600 py-2 px-4 rounded-tr-xl rounded-tl-xl focus:!bg-blue-600"
+          onMouseLeave={() => toggleMegaMenu(false)}>
+          Blogs
+        </Link>
       </nav>
 
       {/* Sidebar (Mobile Navigation) */}

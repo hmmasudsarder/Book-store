@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --toastify-color-success: #2196f3;
+  --toastify-color-success: #8dc2edfa;
   --toastify-color-error: #f44336;
   --toastify-color-warning: #ffa726;
   --toastify-color-info: #2196f3;
