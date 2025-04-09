@@ -1,4 +1,4 @@
-# 🚴‍♂️ Book Store - Book Shop Application
+#  Book Store - Book Shop Application
 
 ## 📌 Project Overview
 Book Store is a full-featured e-commerce application designed for buying and selling books. It includes user-friendly features, secure authentication, smooth product management, and a responsive UI for an optimal shopping experience.
