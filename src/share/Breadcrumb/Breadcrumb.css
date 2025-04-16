@@ -1,0 +1,24 @@
+.breadcrumbs > * {
+  display: flex;
+  margin-right: 10px;
+  font-size: 14px;
+  font-family: "poppins";
+  gap: 10px;
+}
+
+.breadcrumbs .crumb::after {
+  content: ">";
+  margin-left: 10px;
+}
+
+.breadcrumbs .crumb:last-child::after {
+  display: none;
+}
+
+.breadcrumbs .crumb:last-child {
+  color: #006b77;
+}
+
+.breadcrumbs .crumb {
+  text-transform: capitalize;
+}

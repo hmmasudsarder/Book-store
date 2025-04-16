@@ -19,10 +19,7 @@ const Navbar = () => {
 
 
   const handleLogout = () => {
-    // Dispatch logout action
     dispatch(logout());
-
-    // Show toast notification
     toast.success('Logout successful!');
   };
 

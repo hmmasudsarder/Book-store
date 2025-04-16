@@ -21,6 +21,7 @@ import AdminOrderDetailes from "../pages/DashBoard/Admin/Order/AdminOrderDetails
 import OrderConfirm from "../components/ui/OrderConfirm";
 import About from "../pages/About/About";
 import Blogs from "../pages/Blogs/Blogs";
+import Dashboards from "../pages/DashBoard/Admin/Dashboards/Dashboards";
 
 
 const router = createBrowserRouter([
@@ -74,18 +75,23 @@ const router = createBrowserRouter([
     children: [
       // normal user routers 
       {
+        path: '',
+        element:
+          <Dashboards />
+      },
+      {
         path: 'userHome',
-        element: 
-        <PrivateRoute>
-        <CustomerHome />
-        </PrivateRoute>
+        element:
+          <PrivateRoute>
+            <CustomerHome />
+          </PrivateRoute>
       },
       {
         path: 'profile',
         element:
-        <PrivateRoute>
-          <CustomerProfile />
-        </PrivateRoute> 
+          <PrivateRoute>
+            <CustomerProfile />
+          </PrivateRoute>
       },
 
 

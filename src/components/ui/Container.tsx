@@ -1,10 +1,15 @@
+import React from 'react';
+import { twMerge } from "tailwind-merge";
 
-const Container = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
 }
 
-export default Container
+const Container: React.FC<ContainerProps> = ({ children, className }) => {
+  return (
+    <div className={twMerge(" mx-auto lg:p-8 p-3", className)}>{children}</div>
+  );
+};
+
+export default Container;
