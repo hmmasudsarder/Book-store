@@ -10,24 +10,11 @@ import {
 } from "react-icons/md";
 import { menuData } from "./Menu";
 
-// interface SidebarMenuProps {
-//     isMenuOpen: boolean;
-//     setIsMenuOpen: (isOpen: boolean) => void;
-//     isdesktopSidebarOpen: boolean;
-// }
-
-// In SidebarMenu.tsx
 interface SidebarMenuProps {
     isMenuOpen: boolean;
     setIsMenuOpen: (isOpen: boolean) => void;
     isdesktopSidebarOpen: boolean;
     setIsdesktopSidebarOpen: (isOpen: boolean) => void;
-}
-
-interface ProfileLink {
-    name: string;
-    path: string;
-    icon: React.ComponentType;
 }
 
 const SidebarMenu: React.FC<SidebarMenuProps> = ({
@@ -102,11 +89,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
         setIsPopoverOpen((prev) => !prev);
     };
 
-    const handleProfileLinkClick = (path: string) => {
-        setIsMenuOpen(false); // Close sidebar
-        setIsPopoverOpen(false); // Close profile popover
-        navigate(path); // Navigate to the profile page
-    };
+
 
     const sidebarVariants = {
         hidden: { x: "-100%", opacity: 0 },
@@ -374,16 +357,6 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         exit="hidden"
                                         variants={profilePopoverVariants}
                                     >
-                                        {menuData?.profileLinks?.map((link: ProfileLink, index: number) => (
-                                            <div
-                                                key={index}
-                                                onClick={() => handleProfileLinkClick(link.path)}
-                                                className="flex items-center gap-2 cursor-pointer hover:text-secondary transition-all duration-300"
-                                            >
-                                                <span>{<link.icon />}</span>
-                                                {link.name}
-                                            </div>
-                                        ))}
                                     </motion.div>
                                 )}
                             </AnimatePresence>
