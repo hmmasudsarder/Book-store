@@ -14,7 +14,7 @@ export const menuData = {
       {
           name: "Shop",
           icon: ShoppingBagIcon,
-          path: "/shop",
+          path: "/userHome",
           subItems: [
               { name: "Books", path: "/shop/books" },
               { name: "Magazines", path: "/shop/magazines" },

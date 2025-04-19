@@ -82,9 +82,9 @@ const router = createBrowserRouter([
       {
         path: 'userHome',
         element:
-          <PrivateRoute>
+          // <PrivateRoute>
             <CustomerHome />
-          </PrivateRoute>
+          // </PrivateRoute>
       },
       {
         path: 'profile',
