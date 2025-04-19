@@ -10,22 +10,21 @@ import { useEffect, useMemo } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import ReactPaginate from "react-paginate";
 
-interface TableProps {
-  tabelData: any[]; // Replace 'any' with the actual type of your data
-  columns: any[]; // Replace 'any' with the actual type of your columns
-  pagination: {
-    pageSize: number;
-    pageIndex: number;
-  };
-  setPagination: (pagination: {
-    pageSize: number;
-    pageIndex: number;
-  }) => void;
+type TableProps = {
+  columns: Array<{
+    header: string;
+    accessorKey?: string;
+    cell?: (row: any) => React.ReactNode;
+    id?: string;
+  }>;
+  tabelData: any[]; // Replace 'any' with the actual type if known
+  pagination: { pageSize: number; pageIndex: number };
+  setPagination: (pagination: { pageSize: number; pageIndex: number }) => void;
   totalData: number;
   loading: boolean;
-  search: string;
-  setSearch: (search: string) => void;
-}
+  search: string; // Add the search property
+  setSearch: (search: string) => void; // Add the setSearch property
+};
 
 const Table: React.FC<TableProps> = ({
   tabelData,

@@ -22,7 +22,13 @@ interface SidebarMenuProps {
     setIsMenuOpen: (isOpen: boolean) => void;
     isdesktopSidebarOpen: boolean;
     setIsdesktopSidebarOpen: (isOpen: boolean) => void;
-  }
+}
+
+interface ProfileLink {
+    name: string;
+    path: string;
+    icon: React.ComponentType;
+}
 
 const SidebarMenu: React.FC<SidebarMenuProps> = ({
     isMenuOpen,
@@ -44,8 +50,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                 setActiveMainItem(index);
                 setExpandedMenu(index);
                 setActiveSubItem(null);
-            } else if (item.subItems.length > 0) {
-                item.subItems.forEach((subItem, subIndex) => {
+            } else if ((item.subItems ?? []).length > 0) {
+                item.subItems?.forEach((subItem, subIndex) => {
                     if (subItem.path === location.pathname) {
                         setActiveMainItem(index);
                         setExpandedMenu(index);
@@ -57,7 +63,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     }, [location.pathname]);
 
     const handleMainItemClick = (index: number, path: string) => {
-        if (menuData.menu[index].subItems.length === 0) {
+        if ((menuData.menu[index].subItems?.length ?? 0) === 0) {
             setIsMenuOpen(false); // Close sidebar if no sub-items
             navigate(path); // Navigate to the clicked menu item
         } else {
@@ -72,8 +78,10 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                 // Navigate to the main item path if it exists, or the first sub-item
                 if (path) {
                     navigate(path);
-                } else if (menuData.menu[index].subItems.length > 0) {
-                    navigate(menuData.menu[index].subItems[0].path);
+                } else if (menuData.menu[index]?.subItems && menuData.menu[index].subItems.length > 0) {
+                    if (menuData.menu[index].subItems?.[0]?.path) {
+                        navigate(menuData.menu[index].subItems[0].path);
+                    }
                 }
             }
         }
@@ -220,7 +228,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         >
                                             <span>{<item.icon />}</span>
                                             {item.name}
-                                            {item.subItems.length > 0 && (
+                                            {(item.subItems?.length ?? 0) > 0 && (
                                                 <span>
                                                     {expandedMenu === index ? (
                                                         <MdOutlineKeyboardArrowDown className="text-[20px]  font-light" />
@@ -232,7 +240,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         </div>
 
                                         <AnimatePresence>
-                                            {expandedMenu === index && item.subItems.length > 0 && (
+                                            {expandedMenu === index && (item.subItems?.length ?? 0) > 0 && (
                                                 <motion.div
                                                     className="flex flex-col gap-3 pl-[22px] mt-3"
                                                     variants={submenuVariants}
@@ -241,7 +249,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                                     exit="exit"
                                                     layout
                                                 >
-                                                    {item.subItems.map((subItem, subIndex) => (
+                                                    {item.subItems?.map((subItem, subIndex) => (
                                                         <Link
                                                             to={subItem.path}
                                                             key={subIndex}
@@ -300,7 +308,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         >
                                             <span>{<item.icon />}</span>
                                             {item.name}
-                                            {item.subItems.length > 0 && (
+                                            {(item.subItems?.length ?? 0) > 0 && (
                                                 <span>
                                                     {expandedMenu === index ? (
                                                         <MdOutlineKeyboardArrowDown className="text-[20px]  font-light" />
@@ -312,7 +320,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         </div>
 
                                         <AnimatePresence>
-                                            {expandedMenu === index && item.subItems.length > 0 && (
+                                            {expandedMenu === index && (item.subItems?.length ?? 0) > 0 && (
                                                 <motion.div
                                                     className="flex flex-col gap-3 pl-[22px] mt-3"
                                                     variants={submenuVariants}
@@ -321,7 +329,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                                     exit="exit"
                                                     layout
                                                 >
-                                                    {item.subItems.map((subItem, subIndex) => (
+                                                    {item.subItems?.map((subItem, subIndex) => (
                                                         <Link
                                                             to={subItem.path}
                                                             key={subIndex}
@@ -366,7 +374,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
                                         exit="hidden"
                                         variants={profilePopoverVariants}
                                     >
-                                        {menuData?.profileLinks?.map((link, index) => (
+                                        {menuData?.profileLinks?.map((link: ProfileLink, index: number) => (
                                             <div
                                                 key={index}
                                                 onClick={() => handleProfileLinkClick(link.path)}

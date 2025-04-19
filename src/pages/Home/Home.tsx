@@ -1,4 +1,5 @@
 import FeaturedAuthors from "../../components/Home/FeaturedAuthors";
+import CategorySection from "../../components/Home/Category";
 import FeaturedSlider from "../../components/Home/FeaturedSlider";
 import HBrandSlider from "../../components/Home/HBrandSlider";
 import HomeBanner from "../../components/Home/HomeBanner";
@@ -12,6 +13,7 @@ const Home = () => {
       <HomeBanner />
       <OffersSection />
       <HBrandSlider />
+      <CategorySection/>
       <Products />
       <StorytellingSection />
       <FeaturedSlider />

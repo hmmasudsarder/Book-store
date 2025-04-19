@@ -9,9 +9,9 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ title }) => {
   const location = useLocation();
   const pathSegments = location.pathname.split("/").filter(Boolean);
 
-  let breadcrumbs = [];
+  const breadcrumbs: JSX.Element[] = [];
   let currentPath = "";
-  const generateBreadcrumb = (segment, index) => {
+  const generateBreadcrumb = (segment: string, index: number): JSX.Element => {
     currentPath += `/${segment}`;
     const path = currentPath;
     const isLast = index === pathSegments.length - 1;
@@ -25,6 +25,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ title }) => {
       </div>
     );
     breadcrumbs.push(breadcrumb);
+    return breadcrumb;
   };
 
   pathSegments.forEach(generateBreadcrumb);

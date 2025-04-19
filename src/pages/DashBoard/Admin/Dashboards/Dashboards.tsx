@@ -4,7 +4,7 @@ import ActionModal from "../../../../share/ActionModal/ActionModal";
 import Breadcrumb from "../../../../share/Breadcrumb/Breadcrumb";
 // import Heading from "../../share/ui/Heading/Heading";
 // import Paragraph from "../../share/ui/Paragraph/Paragraph";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import useClickOutside from "../../../../hooks/useClickOutside";
 import DropdownMenu from "../../../../share/DropdownMenu/DropdownMenu";
 import Table from "../../../../share/Table/Table";
@@ -17,6 +17,8 @@ import BarCharts from "../../../../share/Charts/BarChart/BarCharts";
 
 const Dashboards = () => {
   const { parentVariant, childVariant } = usePageAnimation();
+  const [loading, setLoading] = useState(false);
+  
   const {
     dropdownOpenId,
     selectedUserId,
@@ -27,14 +29,14 @@ const Dashboards = () => {
   } = useModalDropdown();
   const dropdownRef = useRef(null);
 
-  useClickOutside(dropdownRef, () => toggleDropdown(null));
+  useClickOutside({ ref: dropdownRef, callback: () => toggleDropdown(null) });
 
   const header = [
     { header: "Sl", accessorKey: "id" },
     {
       header: "Image",
       accessorKey: "image",
-      cell: ({ row }) => (
+      cell: ({ row }: { row: { original: { image: string } } }) => (
         <img
           src={row.original.image}
           alt=""
@@ -48,7 +50,7 @@ const Dashboards = () => {
     {
       header: "Action",
       id: "action",
-      cell: ({ row }) => {
+      cell: ({ row }: { row: { original: { id: string; image: string; username: string } } }) =>{
         const { id } = row.original;
         const isOpen = dropdownOpenId === id;
 
@@ -57,14 +59,23 @@ const Dashboards = () => {
             id={id}
             isOpen={isOpen}
             toggleDropdown={toggleDropdown}
-            onEdit=""
-            onDelete=""
-            onDetails={openDetailsModal}
+            onEdit={() => {}}
+            onDelete={() => {}}
+            onDetails={() => openDetailsModal({ id, name: row.original.username })}
           />
         );
       },
     },
   ];
+
+  const [pagination, setPaginationState] = useState({ pageSize: 10, pageIndex: 0 });
+  const [totalData, setTotalData] = useState(usersData.length);
+  const [search, setSearch] = useState("");
+  console.log(setLoading, setTotalData, setSearch);
+
+  function setPagination(pagination: { pageSize: number; pageIndex: number }): void {
+    setPaginationState(pagination);
+  }
 
   return (
     <Container>
@@ -143,12 +154,16 @@ const Dashboards = () => {
             <AreaCharts />
           </motion.div>
         </div>
-        <motion.div
-          variants={childVariant}
-          className=" rounded-lg row-span-6  mt-3"
-        >
-          <Table columns={header} tabelData={usersData} />
-        </motion.div>
+        <Table
+          columns={header}
+          tabelData={usersData}
+          pagination={pagination}
+          setPagination={setPagination}
+          totalData={totalData}
+          loading={loading}
+          search={search}
+          setSearch={setSearch}
+        />
       </motion.div>
       <ActionModal
         isOpen={isDetailsModalOpen}

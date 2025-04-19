@@ -31,10 +31,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   detailsTitle,
 }) => {
   const dropdownRef = useRef(null);
-  useClickOutside(dropdownRef, () => {
-    if (isOpen) {
-      toggleDropdown();
-    }
+  useClickOutside({
+    ref: dropdownRef,
+    callback: () => {
+      if (isOpen) {
+        toggleDropdown();
+      }
+    },
   });
   const handleEdit = () => {
     toggleDropdown(id);
