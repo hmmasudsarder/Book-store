@@ -2,7 +2,7 @@ import { RxDashboard } from "react-icons/rx";
 
 // import { FiUsers } from "react-icons/fi";
 // import { IoColorFillSharp } from "react-icons/io5";
-import { ShoppingBagIcon } from "lucide-react";
+import { Home, ShoppingBagIcon } from "lucide-react";
 // import { SettingsIcon, ShoppingBagIcon } from "lucide-react";
 export const menuData = {
   menu: [
@@ -38,6 +38,15 @@ export const menuData = {
               { name: "Books", path: "/shop/books" },
               { name: "Get ALL Products", path: "getAllProductByAdmin" },
           ],
+      },
+      {
+          name: "Back To Home",
+          icon: Home,
+          path: "/",
+          // subItems: [
+          //     // { name: "Books", path: "/shop/books" },
+          //     { name: "Get ALL Products", path: "getAllProductByAdmin" },
+          // ],
       },
   ],
   // profileLinks: [
