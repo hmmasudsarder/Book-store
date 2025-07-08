@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import { useGetAllProductsQuery } from "../../redux/features/admin/productManagement.api";
-import { MdOutlineShoppingCart } from "react-icons/md";
+// import { MdOutlineShoppingCart } from "react-icons/md";
 
 // const products = [
 //   {
@@ -116,9 +116,9 @@ const Products = () => {
                   <button className=" flex-grow bg-pink-500 text-white py-[6px] mt-3 mb-2 rounded-xl hover:bg-gradient-to-br from-blue-700 to-blue-400 transition duration-500 transform">
                     View Details
                   </button>
-                  <button className="font-semibold text-lg border-2 border-gray-500 rounded-full p-2">
+                  {/* <button className="font-semibold text-lg border-2 border-gray-500 rounded-full p-2">
                     <MdOutlineShoppingCart className="text-lg" />
-                  </button>
+                  </button> */}
                 </Link>
               </div>
             </div>
