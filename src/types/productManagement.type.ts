@@ -8,6 +8,6 @@ export type TProduct = {
     productImg: string
     description: string
     quantity: number
-    inStock: boolean
+    stock: boolean
     category: string
   };

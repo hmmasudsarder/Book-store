@@ -1,50 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
 import { useGetAllProductsQuery } from "../../redux/features/admin/productManagement.api";
-// import { MdOutlineShoppingCart } from "react-icons/md";
 
-// const products = [
-//   {
-//     id: 1,
-//     name: "Kristin Hannah",
-//     image: product1,
-//     discount: "6%",
-//     oldPrice: 128,
-//     newPrice: 120,
-//   },
-//   {
-//     id: 2,
-//     name: "FAbraham Verghese",
-//     image: product2,
-//     discount: "6%",
-//     oldPrice: 128,
-//     newPrice: 120,
-//   },
-//   {
-//     id: 3,
-//     name: "Kristin Hannah",
-//     image: product3,
-//     discount: "6%",
-//     oldPrice: 128,
-//     newPrice: 120,
-//   },
-//   {
-//     id: 4,
-//     name: "FAbraham Verghese",
-//     image: product1,
-//     discount: "6%",
-//     oldPrice: 128,
-//     newPrice: 120,
-//   },
-//   {
-//     id: 5,
-//     name: "Kristin Hannah",
-//     image: product1,
-//     discount: "6%",
-//     oldPrice: 128,
-//     newPrice: 120,
-//   },
-// ];
 
 const Products = () => {
   const { data, isFetching } = useGetAllProductsQuery(undefined);
