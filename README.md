@@ -1,50 +1,89 @@
-#  Book Store - Book Shop Application
+#  📚 Book Store – Mini E-Commerce SPA
 
 ## 📌 Project Overview
-Book Store is a full-featured e-commerce application designed for buying and selling books. It includes user-friendly features, secure authentication, smooth product management, and a responsive UI for an optimal shopping experience.
+A responsive and modern Single Page Application (SPA) for buying and selling books online. This project was built as part of a frontend developer assessment task, featuring product listing, cart management, checkout, and role-based dashboards. No authentication is required for core shopping features.
+
+🔗 Live Links
+🚀 Frontend: https://ts-book-store.vercel.app/
+
+🚀 Backend API: https://github.com/hmmasudsarder/Book-Shop-Server
+
+🛠 GitHub Repository: GitHub Repo https://github.com/hmmasudsarder/Book-store
+
+
+🧪 Assessment Objective
+This app satisfies the following key requirements:
+
+✅ SPA with React.js and TypeScript
+
+✅ Product listing with “Add to Cart” functionality
+
+✅ Product detail pages
+
+✅ Slide-in/out cart sidebar
+
+✅ Checkout modal with form
+
+✅ Responsive UI with clean card layout
+
+✅ Version control with Git (hosted on GitHub)
+
+✅ Deployed on Vercel
+
+
 
 ## 🛠️ Technologies Used
 - **Frontend:** React, TypeScript, Tailwind CSS
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Token)
-- **Payment Gateway:** SurjoPay
 - **State Management:** Redux Toolkit
 - **Deployment:** Vercel (Backend), (front)
 
-## 🔑 Main Features
-### 👥 User Registration & Authentication (Role-Based)
-- Secure Registration & Login
-  - Users register with **name, email, and password**
-  - Default role: **Customer**
-  - Admin role manually assigned (no Super Admin needed)
-  - Passwords securely hashed 🔒
-- **JWT Token Authentication**
-  - Generates a secure token on login
-  - Stores the token in local storage for session management
-- **Logout**
-  - Clears token and redirects user to login page
 
-### 🌍 Public Routes
-#### 🏠 Home Page
 
-#### 🚴 All Products Page
-- **Search & Filter**
-  - Search by **author, book name, or category** 🔍
-  - Filters for **price range, category, and availability**
-  - Dynamic results updating in real-time
-- **Product Cards**
-  - Name, author, price, category
-  - "View Details" button for each product
+#### 🏠📄 Application Pages
+####  🏠 Home Page
+Lists at least 6 products (books)
+
+Each product shows: image, title, price, and "Add to Cart" button
+
+Products are clickable to view details
+
+📘 Product Detail Page
+Shows full product info: image, title, description, price, etc.
+
+Includes "Add to Cart" button
+
+🛒 Cart Sidebar
+Slide-in/out sidebar
+
+Quantity controls (+ / -)
+
+Displays total amount
+
+"Checkout" button
+
+💳 Checkout Modal
+Triggered by "Checkout" in the cart
+
+Includes form fields:
+
+Name
+
+Email
+
+Address
+
+Submits mock order (no real API used for order placement)
+
 
 #### 📦 Product Details Page
 - Displays **product image and full details** 🏷️
 - **"Buy Now" button** redirects to checkout page
 
-#### ℹ️ About Page
-- Information about Book shop, mission, and other details
 
-### 🔒 Private Routes
+
 #### 💳 Checkout Page
 - Users can place orders with a **secure checkout process**
 - Ensures **stock availability** before confirming orders
@@ -57,14 +96,7 @@ Book Store is a full-featured e-commerce application designed for buying and sel
   - Implemented **SurjoPay** as the payment gateway ✅
   - "Order Now" button to confirm purchase
 
-#### 📊 Dashboard (Role-Based Access)
-- **Admin Dashboard** 🛠️
-  - Manage Users (e.g., Deactivate Accounts)
-  - Manage Products (**CRUD**)
-  - Manage Orders (**CRUD**)
-- **User Dashboard** 👤
-  - View Orders
-  - Manage Profile Settings
+
 
 
 ## 🚀 Installation & Setup
@@ -96,15 +128,57 @@ npm install
 npm run dev
 ```
 
-## 🎯 Future Enhancements
-- 📦 Implement Wishlist & Cart functionality
-- 🌟 Add user reviews & ratings for products
-- 📅 Order tracking system
-- 📢 Email notifications for order updates
+⚙️ Getting Started
+📦 Backend Setup
+bash
+Copy code
+# Clone the repository
+git clone https://github.com/your-username/book-store.git
+cd book-store/backend
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+touch .env
+# Add the following
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+SURJOPAY_API_KEY=your_api_key
+JWT_REFRESH_SECRET=your_jwt_refresh_secret
+
+# Start the backend server
+npm run dev
+🌐 Frontend Setup
+bash
+Copy code
+cd ../frontend
+
+# Install dependencies
+npm install
+
+# Start the frontend server
+npm run dev
+
+📦 Add-to-cart and cart sidebar experience
+
+🧾 Checkout modal with validation
 
 
-## 🎯 Live Project Front End Link : https://book-shop-theta-bay.vercel.app/
-## 🎯 Live Project back End Link : https://book-shop-server-kohl.vercel.app/api/products
+
+
+🎯 Future Enhancements
+Wishlist functionality
+
+Product reviews and ratings
+
+Email notifications
+
+Order tracking system
+
+👨‍💻 Developed By
+Masud Sarder
+📫✨ Frontend Developer | React & Next.js
 
 ## ✨ Developed By
 🚀 **Masud Sarder**  
